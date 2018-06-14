@@ -26,7 +26,7 @@ cargar = True                      #Cargar los pesos del entrenamiento
 guardar = True                    #Guardar los pesos al entrenar
 nombre_archivo = "pesos1.h5"
 nombre_archivo2 = "pesos2.h5"
-render = True                  #Renderizar el environment
+render = True            #Renderizar el environment
 plot = False                         #Ver grafico del estado
 
 memoria = rl.Memoria(cantidadfit * 5) #Crea memoria para el replay
