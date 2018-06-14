@@ -12,13 +12,13 @@ from sklearn.preprocessing import MinMaxScaler
 #Configuracion del modelo
 
 max_ep = 20000
-epsilon = 0.1
+epsilon = 0.05
 epsilon_min = 0.1
 epsilon_decay=0.9999
 gamma = 0.9
 
-cantidad = 1
-cantidadfit = 20
+cantidad = 32
+cantidadfit = 500
 
 #-------------------------------
 
@@ -26,7 +26,7 @@ cargar = True                      #Cargar los pesos del entrenamiento
 guardar = True                    #Guardar los pesos al entrenar
 nombre_archivo = "pesos1.h5"
 nombre_archivo2 = "pesos2.h5"
-render = False                    #Renderizar el environment
+render = True                  #Renderizar el environment
 plot = False                         #Ver grafico del estado
 
 memoria = rl.Memoria(cantidadfit * 5) #Crea memoria para el replay
@@ -42,7 +42,7 @@ model.add(Dense(16,activation="hard_sigmoid"))
 model.add(Dense(8,activation="hard_sigmoid"))
 model.add(Dense(2,activation="linear"))
 
-adam = optimizers.adam(lr=0.001)
+adam = optimizers.adam(lr=0.0005)
 model.compile(optimizer=adam,loss="mse")
 
 model2 = Sequential()
